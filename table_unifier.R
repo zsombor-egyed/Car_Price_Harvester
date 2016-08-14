@@ -1,4 +1,3 @@
-setwd(".")
 library(dplyr)
 
 type_table <- read.csv("car_types.csv", stringsAsFactors = FALSE)
