@@ -11,15 +11,15 @@ for (i in indices){
   for (p in proper_tables){
     input_table <- tryCatch(read.csv(paste0("./car_specific_tables/", p), stringsAsFactors = FALSE), error = function(e){"M"})
     input_table <- data.frame(input_table, stringsAsFactors = FALSE)
-    if (nrow(input_table)>5){
+    if (nrow(input_table) > 5){
       if (flag == 0){
         output_table <- input_table
         flag <- 1
       }
       else{
-        output_table <- rbind(output_table,input_table)
+        output_table <- rbind(output_table, input_table)
       }
     }
   }
-  write.csv(output_table,file = paste0("./binded_tables/", i, ".csv"), row.names = FALSE)
+  write.csv(output_table, file = paste0("./binded_tables/", i, ".csv"), row.names = FALSE)
 }
