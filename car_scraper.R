@@ -26,20 +26,20 @@ for (i in 1:7000){
     important_properties_list <- c()
     if (specific_list_control > 3){
       for (s in 4:(specific_list_control - 1)){
-          if (length(car_specific_lists[[s]]) > 1 &  !("Adatlap QR kódja" %in% car_specific_lists[[s]])){
+          if ((length(car_specific_lists[[s]]) > 1) &  (!("Adatlap QR kódja" %in% car_specific_lists[[s]]))){
             important_properties_list <- c(important_properties_list, car_specific_lists[[s]])
           }
       
       }
     }
     
-    car_type <- strsplit(strsplit(links[1],"http://www.hasznaltauto.hu/auto/")[[1]][2],"/")[[1]][2]
+    car_type <- strsplit(strsplit(links[1], "http://www.hasznaltauto.hu/auto/")[[1]][2], "/")[[1]][2]
   
-    car_maker <- strsplit(strsplit(links[1],"http://www.hasznaltauto.hu/auto/")[[1]][2],"/")[[1]][1]
+    car_maker <- strsplit(strsplit(links[1], "http://www.hasznaltauto.hu/auto/")[[1]][2], "/")[[1]][1]
     
-    car_subtype <- strsplit(strsplit(links[1],"http://www.hasznaltauto.hu/auto/")[[1]][2],"/")[[1]][3]
+    car_subtype <- strsplit(strsplit(links[1], "http://www.hasznaltauto.hu/auto/")[[1]][2], "/")[[1]][3]
     
-    car_type_properties <- c(car_type,car_maker,car_subtype)
+    car_type_properties <- c(car_type, car_maker, car_subtype)
   
     car_type_properties <- data.frame(car_type_properties)
   
