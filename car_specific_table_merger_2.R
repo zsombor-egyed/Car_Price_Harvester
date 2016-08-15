@@ -5,7 +5,7 @@ for (car in cars){
   print(car)
   property_table <- tryCatch(read.csv(paste0("./binded_tables/", car), stringsAsFactors = FALSE), error = function(e){"M"})
   if (property_table != "M"){
-    overall_property_list <- unique(c(overall_property_list,property_table[,1]))
+    overall_property_list <- unique(c(overall_property_list, property_table[,1]))
   }
 }
 
