@@ -57,4 +57,3 @@ for (i in 1:7000){
     write.csv(car_type_properties, file = paste0("./car_type_property_tables/", adcode, ".csv"), row.names = FALSE)
   }
 }
-
